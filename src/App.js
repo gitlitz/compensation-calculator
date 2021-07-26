@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 
 const STUDY_FUND_TAX_CEILING = 1178.4;
-const MONTHLY_WORK_DAYS = 5 * 365 /(12 * 7); 
+const MONTHLY_WORK_DAYS = 5 * 365 / (12 * 7);
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -37,19 +37,19 @@ class Calculator extends React.Component {
     if (!this.state.isTenBisMonthly) {
       tenBisValue *= MONTHLY_WORK_DAYS;
     }
-    
+
     var travelValue = this.state.travel;
     if (!this.state.isTravelMonthly) {
       travelValue *= MONTHLY_WORK_DAYS;
     }
 
-    const beforeVacation = this.state.salary * (1 + 0.125 + 1/12) // including pension and dismissal
+    const beforeVacation = this.state.salary * (1 + 0.125 + 1 / 12) // including pension and dismissal
       + this.state.stocks * this.usdToNis * (this.state.stockValue - this.state.stockPrice)
       + studyValue
       + this.state.yearlyBonus / 12
       + tenBisValue
       + travelValue;
-    return beforeVacation *(1 + this.state.vacationDay / (12 * MONTHLY_WORK_DAYS));
+    return beforeVacation * (1 + this.state.vacationDay / (12 * MONTHLY_WORK_DAYS));
   }
 
   calc4realz() {
@@ -74,47 +74,49 @@ class Calculator extends React.Component {
     return (<div dir="rtl" onChange={this.handleInputChange}>
       <table>
         <tr>
-          <td><label for="salary" >משכורת חודשי </label></td>
+          <td><label for="salary" class="form-label">משכורת חודשי </label></td>
           <td>
-            <input type="number" id="salary" name="salary" value={this.state.salary} />
+            <input class="form-control"type="number" id="salary" name="salary" value={this.state.salary} />
           </td>
         </tr>
         <tr>
           <td>
-            <label>
+            <label for="stocks" class="form-label">
               מניות / אופציות במשך 4 שנים
 
             </label>
           </td>
           <td>
-            <input type="number" id="stocks" name="stocks" value={this.state.stocks} />
+            <input class="form-control"type="number" id="stocks" name="stocks" value={this.state.stocks} />
           </td>
           <td>
-            <label>
+            <label class="form-label">
               שווי מנייה בדולרים
             </label>
           </td>
           <td>
-            <input type="number" id="stockValue" name="stockValue" value={this.state.stockValue} />
+            <input class="form-control"type="number" id="stockValue" name="stockValue" value={this.state.stockValue} />
           </td>
           <td>
-            <label>
+            <label class="form-label">
               עלות מימוש
             </label>
           </td>
           <td>
-            <input type="number" id="stockPrice" name="stockPrice" value={this.state.stockPrice} />
+            <input class="form-control"type="number" id="stockPrice" name="stockPrice" value={this.state.stockPrice} />
           </td>
           <td>
-            <label >שער: {this.usdToNis}</label>
+            <label class="form-label">שער: {this.usdToNis}</label>
           </td>
         </tr>
         <tr>
           <td>
-            קרן השתלמות
+            <label class="form-label">
+              קרן השתלמות
+            </label>
           </td>
           <td>
-            <select id="isStudyFundTaxCeiling" name="isStudyFundTaxCeiling" value={this.state.isStudyFundTaxCeiling}>
+            <select  class="form-select" id="isStudyFundTaxCeiling" name="isStudyFundTaxCeiling" value={this.state.isStudyFundTaxCeiling}>
               <option value="true">תקרת מס</option>
               <option value="false">לפי המשכורת</option>
             </select>
@@ -122,31 +124,33 @@ class Calculator extends React.Component {
         </tr>
         <tr>
           <td>
-            <label>
+            <label class="form-label">
               בונוס שנתי
             </label>
           </td>
-          <input type="number" id="yearlyBonus" name="yearlyBonus" value={this.state.yearlyBonus}/>
+          <input class="form-control"type="number" id="yearlyBonus" name="yearlyBonus" value={this.state.yearlyBonus} />
         </tr>
         <tr>
           <td>
-            <label>
+            <label class="form-label">
               ימי חופש
             </label>
           </td>
           <td>
-            <input type="number" id="vacationDay" name="vacationDay" value={this.state.vacationDay}/>
+            <input class="form-control"type="number" id="vacationDay" name="vacationDay" value={this.state.vacationDay} />
           </td>
         </tr>
         <tr>
           <td>
-            תן ביס
+            <label class="form-label">
+              תן ביס
+            </label>
           </td>
           <td>
-            <input type="number" id="tenBis" name="tenBis" value={this.state.tenBis}/>
+            <input class="form-control"type="number" id="tenBis" name="tenBis" value={this.state.tenBis} />
           </td>
           <td>
-            <select value="true" id="isTenBisMonthly" name="isTenBisMonthly" value={this.state.isTenBisMonthly}>
+            <select  class="form-select" value="true" id="isTenBisMonthly" name="isTenBisMonthly" value={this.state.isTenBisMonthly}>
               <option value="true" >חודשי</option>
               <option value="false">יומי</option>
             </select>
@@ -154,13 +158,15 @@ class Calculator extends React.Component {
         </tr>
         <tr>
           <td>
-            נסיעות
+            <label class="form-label">
+              נסיעות
+            </label>
           </td>
           <td>
-            <input type="number" id="travel" name="travel" value={this.state.travel}/>
+            <input class="form-control"type="number" id="travel" name="travel" value={this.state.travel} />
           </td>
           <td>
-            <select id="isTravelMonthly" name="isTravelMonthly" value={this.state.isTravelMonthly}>
+            <select  class="form-select" id="isTravelMonthly" name="isTravelMonthly" value={this.state.isTravelMonthly}>
               <option value="true">חודשי</option>
               <option value="false">יומי</option>
             </select>

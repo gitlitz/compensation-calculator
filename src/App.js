@@ -44,7 +44,7 @@ class Calculator extends React.Component {
     }
 
     const beforeVacation = this.state.salary * (1 + 0.125 + 1 / 12) // including pension and dismissal
-      + this.state.stocks * this.usdToNis * (this.state.stockValue - this.state.stockPrice)
+      + this.state.stocks * this.usdToNis * (this.state.stockValue - this.state.stockPrice) / 48
       + studyValue
       + this.state.yearlyBonus / 12
       + tenBisValue

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/compensation-calculator/static/css/main.a617e044.chunk.css",
-    "main.js": "/compensation-calculator/static/js/main.473ff7e2.chunk.js",
-    "main.js.map": "/compensation-calculator/static/js/main.473ff7e2.chunk.js.map",
+    "main.js": "/compensation-calculator/static/js/main.31110f98.chunk.js",
+    "main.js.map": "/compensation-calculator/static/js/main.31110f98.chunk.js.map",
     "runtime-main.js": "/compensation-calculator/static/js/runtime-main.a05b951d.js",
     "runtime-main.js.map": "/compensation-calculator/static/js/runtime-main.a05b951d.js.map",
     "static/js/2.2be71aaa.chunk.js": "/compensation-calculator/static/js/2.2be71aaa.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a05b951d.js",
     "static/js/2.2be71aaa.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.473ff7e2.chunk.js"
+    "static/js/main.31110f98.chunk.js"
   ]
 }
